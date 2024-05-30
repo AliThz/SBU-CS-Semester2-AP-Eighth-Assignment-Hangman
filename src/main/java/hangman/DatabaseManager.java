@@ -9,7 +9,7 @@ public class DatabaseManager {
     public static void main(String[] args) {
         var user = new UserInfo();
         user.setName("Hamed Pouraghniaie");
-        user.setUsername("hamed");
+        user.setUsername("mamad");
         user.setPassword("hamed12345");
     }
 
@@ -37,7 +37,7 @@ public class DatabaseManager {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
-        System.out.println("Operation done successfully (selectUserInfos (insertUserInfo)");
+        System.out.println("Operation done successfully (insertUserInfo)");
     }
     //endregion
 
@@ -104,8 +104,32 @@ public class DatabaseManager {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
-        System.out.println("Operation done successfully (selectUserInfos (" + username + "))");
+        System.out.println("Operation done successfully (selectUserInfo (" + username + "))");
         return userInfo;
+    }
+    //endregion
+
+    //region [ - deleteUserInfo(UserInfo userInfo) - ]
+    public void deleteUserInfo(UserInfo userInfo) {
+        Connection c;
+        PreparedStatement stmt;
+        try {
+            Class.forName("org.postgresql.Driver");
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c.setAutoCommit(false);
+            System.out.println("Opened database successfully (deleteUserInfo)");
+
+            stmt = c.prepareStatement("DELETE FROM public.userinfo WHERE \"Username\" = ?;");
+            stmt.setString(1, userInfo.getUsername());
+            stmt.executeUpdate();
+            c.commit();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Operation done successfully (deleteUserInfo)");
     }
     //endregion
 
