@@ -7,8 +7,39 @@ import java.util.ArrayList;
 
 public class DatabaseManager {
     public static void main(String[] args) {
+        var user = new UserInfo();
+        user.setName("Hamed Pouraghniaie");
+        user.setUsername("hamed");
+        user.setPassword("hamed12345");
     }
+
     //region [ - UserInfo CRUD - ]
+
+    //region [ - insertUserInfo(UserInfo userInfo) - ]
+    public void insertUserInfo(UserInfo userInfo) {
+        Connection c;
+        PreparedStatement stmt;
+        try {
+            Class.forName("org.postgresql.Driver");
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c.setAutoCommit(false);
+            System.out.println("Opened database successfully (insertUserInfo)");
+
+            stmt = c.prepareStatement("INSERT INTO public.userinfo(\"Name\", \"Username\", \"Password\") VALUES (?, ?, ?);");
+            stmt.setString(1, userInfo.getName());
+            stmt.setString(2, userInfo.getUsername());
+            stmt.setString(3, userInfo.getPassword());
+            stmt.executeUpdate();
+            c.commit();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Operation done successfully (selectUserInfos (insertUserInfo)");
+    }
+    //endregion
 
     //region [ - ArrayList<UserInfo> selectUserInfos() - ]
     public ArrayList<UserInfo> selectUserInfos() {
