@@ -8,15 +8,15 @@ import java.util.ArrayList;
 public class DatabaseManager {
     public static void main(String[] args) {
         var user = new UserInfo();
-        user.setName("Hamed Pouraghniaie");
-        user.setUsername("mamad");
-        user.setPassword("hamed12345");
+        user.setName("Farid Karimi");
+        user.setUsername("Farid");
+        user.setPassword("Farid12345");
     }
 
     //region [ - UserInfo CRUD - ]
 
     //region [ - insertUserInfo(UserInfo userInfo) - ]
-    public void insertUserInfo(UserInfo userInfo) {
+    public static void insertUserInfo(UserInfo userInfo) {
         Connection c;
         PreparedStatement stmt;
         try {
@@ -106,6 +106,32 @@ public class DatabaseManager {
         }
         System.out.println("Operation done successfully (selectUserInfo (" + username + "))");
         return userInfo;
+    }
+    //endregion
+
+    //region [ - updateUserInfo(UserInfo userInfo) - ]
+    public void updateUserInfo(UserInfo userInfo) {
+        Connection c;
+        PreparedStatement stmt;
+        try {
+            Class.forName("org.postgresql.Driver");
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c.setAutoCommit(false);
+            System.out.println("Opened database successfully (updateUserInfo)");
+
+            stmt = c.prepareStatement("UPDATE public.userinfo SET \"Name\" = ?, \"Password\" = ? WHERE \"Username\" = ?;");
+            stmt.setString(1, userInfo.getName());
+            stmt.setString(2, userInfo.getPassword());
+            stmt.setString(3, userInfo.getUsername());
+            stmt.executeUpdate();
+            c.commit();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Operation done successfully (updateUserInfo)");
     }
     //endregion
 
