@@ -43,7 +43,40 @@ public class DatabaseManager {
     }
     //endregion
 
+    //region [ - UserInfo selectUserInfo(String username) - ]
+    public UserInfo selectUserInfo(String username) {
+        Connection c;
+        PreparedStatement stmt;
+        UserInfo userInfo = null;
+        try {
+            Class.forName("org.postgresql.Driver");
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c.setAutoCommit(false);
+            System.out.println("Opened database successfully (selectUserInfo (" + username + "))");
 
+            stmt = c.prepareStatement("SELECT * FROM UserInfo WHERE \"Username\" = ?");
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
+            userInfo = new UserInfo();
+            while (rs.next()) {
+                userInfo.setName(rs.getString("Name"));
+                userInfo.setUsername(rs.getString("Username"));
+                userInfo.setPassword(rs.getString("Password"));
+                System.out.println("Name = " + userInfo.getName());
+                System.out.println("Username = " + userInfo.getUsername());
+                System.out.println("Password = " + userInfo.getPassword());
+            }
+            rs.close();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Operation done successfully (selectUserInfos (" + username + "))");
+        return userInfo;
+    }
+    //endregion
 
     //endregion
 }
