@@ -11,6 +11,20 @@ public class GameInfo {
     private int time;
     private boolean win;
 
+    public GameInfo() {
+        this.gameID = UUID.randomUUID();
+    }
+
+    public GameInfo(String username, UserInfo userInfo, String word, int wrongGuesses, int time, boolean win) {
+        this.gameID = UUID.randomUUID();
+        this.username = username;
+        this.userInfo = userInfo;
+        this.word = word;
+        this.wrongGuesses = wrongGuesses;
+        this.time = time;
+        this.win = win;
+    }
+
     public UUID getGameID() {
         return gameID;
     }
