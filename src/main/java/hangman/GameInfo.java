@@ -24,6 +24,15 @@ public class GameInfo {
         this.win = win;
     }
 
+    public GameInfo(UUID gameID, String username, String word, int wrongGuesses, int time, boolean win) {
+        this.gameID = gameID;
+        this.username = username;
+        this.word = word;
+        this.wrongGuesses = wrongGuesses;
+        this.time = time;
+        this.win = win;
+    }
+
     public UUID getGameID() {
         return gameID;
     }
