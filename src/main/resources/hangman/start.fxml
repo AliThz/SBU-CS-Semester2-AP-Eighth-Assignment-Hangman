@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" styleClass="background" stylesheets="@styles/loginorsignup.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangman.HangmanController">
+   <children>
+      <HBox prefHeight="304.0" prefWidth="960.0" spacing="30.0" style="-fx-alignment: center;">
+         <children>
+            <AnchorPane prefHeight="293.0" prefWidth="795.0" styleClass="game-title-image" />
+            <AnchorPane prefHeight="293.0" prefWidth="79.0" styleClass="hangman-image">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </AnchorPane>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets top="60.0" />
+         </padding>
+      </HBox>
+      <HBox prefHeight="258.0" prefWidth="960.0" spacing="150.0" style="-fx-alignment: center;">
+         <children>
+            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#openLoginPage" style="-fx-background-radius: 20;" text="Login" textFill="#254336">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSignUp" mnemonicParsing="false" onAction="#openSignUpPage" style="-fx-background-radius: 20;" text="SignUp" textFill="#254336">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
