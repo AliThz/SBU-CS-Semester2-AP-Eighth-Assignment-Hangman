@@ -1,0 +1,46 @@
+.background{
+    /*-fx-background-image: url("../pictures/background-1.png");*/
+    -fx-background-color :  #254336;
+    /*-fx-alignment: center;*/
+}
+
+.hangman-image {
+    -fx-background-image: url("../pictures/hangman-2.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+}
+
+.lblWord {
+    -fx-alignment: center;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #254336;
+    /*-fx-text-fill: transparent;*/
+    -fx-font-size: 4em;
+    -fx-background-radius: 20;
+}
+
+.letterPlaceHolder{
+    -fx-alignment: center;
+    -fx-background-color: #ffffff;
+    /*-fx-text-fill: #254336;*/
+    /*-fx-text-fill: transparent;*/
+    /*-fx-font-size: 4em;*/
+    /*-fx-background-radius: 20;*/
+}
+
+.deadMan {
+    -fx-stroke: red;
+}
+
+.missingCharacters {
+    -fx-text-fill: red;
+}
+
+.winStatus {
+    -fx-alignment: center;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #254336;
+    -fx-font-size: 5em;
+    -fx-background-radius: 20;
+    -fx-padding: 30;
+}
