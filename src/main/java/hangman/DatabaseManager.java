@@ -310,5 +310,39 @@ public class DatabaseManager {
     }
     //endregion
 
+    //region [ - ArrayList<LeaderBoard> selectLeaderBoard() - ]
+    public ArrayList<LeaderBoard> selectLeaderBoard() {
+        Connection c;
+        Statement stmt;
+        ArrayList<LeaderBoard> leaderBoards = null;
+        try {
+            Class.forName("org.postgresql.Driver");
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c.setAutoCommit(false);
+            System.out.println("Opened database successfully (selectLeaderboard)");
+
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT \"Username\", SUM((100 * LENGTH(\"Word\")) / \"Time\") as \"Score\", SUM(\"Time\") as \"Play Time\" FROM public.gameinfo Group BY \"Username\";");
+            leaderBoards = new ArrayList<>();
+            while (rs.next()) {
+                LeaderBoard leaderBoard = new LeaderBoard();
+                leaderBoard.setUsername(rs.getString("Username"));
+                leaderBoard.setScore(rs.getInt("Score"));
+                leaderBoard.setPlayTime(rs.getInt("Play Time"));
+                leaderBoards.add(leaderBoard);
+            }
+            rs.close();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        System.out.println("Operation done successfully (selectLeaderboard)");
+        return leaderBoards;
+    }
     //endregion
+
+    //endregion
+
 }
