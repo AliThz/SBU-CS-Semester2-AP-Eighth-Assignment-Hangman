@@ -1,5 +1,6 @@
 package hangman;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -44,26 +45,26 @@ public class LeaderBoardController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ArrayList<LeaderBoard> leaderBoards = gameService.getLeaderboard();
-        Collections.reverse(leaderBoards);
+//        Collections.reverse(leaderBoards);
 
         TableView<LeaderBoard> tableView = new TableView<>();
+        TableColumn<LeaderBoard, String> rankColumn = new TableColumn<>("Rank");
+        rankColumn.setSortable(false);
         TableColumn<LeaderBoard, String> usernameColumn = new TableColumn<>("Username");
-        TableColumn<LeaderBoard, String> scoreColumn = new TableColumn<>("Score");
-        TableColumn<LeaderBoard, String> playTimeColumn = new TableColumn<>("Play Time");
+        TableColumn<LeaderBoard, String> winsColumn = new TableColumn<>("Wins");
 
         // Set up cell value factories
+        rankColumn.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(tableView.getItems().indexOf(cellData.getValue()) + 1)));
         usernameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUsername()));
-        scoreColumn.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getScore())));
-        playTimeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getPlayTime())));
+        winsColumn.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getWins())));
 
         // Create an ObservableList and populate it with data from the database
         ObservableList<LeaderBoard> leaderboard = FXCollections.observableArrayList();
         leaderboard.addAll(leaderBoards);
         // Add more data from your database here
-
         // Bind the data to the TableView
         tableView.setItems(leaderboard);
-        tableView.getColumns().addAll(usernameColumn, scoreColumn, playTimeColumn);
+        tableView.getColumns().addAll(rankColumn, usernameColumn, winsColumn);
 
         tableView.getStyleClass().add("table-view");
         vbxLeaderBoardContainer.getChildren().add(1, tableView);

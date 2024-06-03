@@ -15,7 +15,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class GameService {
     private DatabaseManager databaseManager;
 
-
     public String getWord() {
         try {
             URL url = new URL("https://api.api-ninjas.com/v1/randomword");
@@ -24,8 +23,7 @@ public class GameService {
             InputStream responseStream = connection.getInputStream();
             ObjectMapper mapper = new ObjectMapper();
             JsonNode root = mapper.readTree(responseStream);
-            String word =root.path("word").asText();
-            return word;
+            return root.path("word").asText();
         } catch (Exception e) {
             e.printStackTrace();
         }

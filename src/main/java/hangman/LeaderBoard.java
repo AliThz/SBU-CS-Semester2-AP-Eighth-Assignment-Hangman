@@ -2,17 +2,14 @@ package hangman;
 
 public class LeaderBoard {
     private String username;
-    private int score;
-    private int playTime;
-
+    private int wins;
 
     public LeaderBoard() {
     }
 
-    public LeaderBoard(String username, int score, int playTime) {
+    public LeaderBoard(String username, int wins) {
         this.username = username;
-        this.score = score;
-        this.playTime = playTime;
+        this.wins = wins;
     }
 
     public String getUsername() {
@@ -23,19 +20,13 @@ public class LeaderBoard {
         this.username = username;
     }
 
-    public int getScore() {
-        return score;
+    public int getWins() {
+        return wins;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setWins(int wins) {
+        this.wins = wins;
     }
 
-    public int getPlayTime() {
-        return playTime;
-    }
 
-    public void setPlayTime(int playTime) {
-        this.playTime = playTime;
-    }
 }
