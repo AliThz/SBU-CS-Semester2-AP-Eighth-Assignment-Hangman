@@ -1,5 +1,6 @@
 package hangman;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,6 +13,8 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class HangmanController {
+    public static UserInfo player;
+
     @FXML
     private Button btnExit;
 
@@ -30,14 +33,23 @@ public class HangmanController {
     @FXML
     private Button btnSignUp;
 
+    @FXML
+    private Button btnLogOut;
+
 
     private Parent root;
     private Scene scene;
     private Stage stage = new Stage();
 
     @FXML
-    protected void play() {
-
+    protected void play() throws IOException {
+        GameController.player = player;
+        Stage currentStage = (Stage) btnPlay.getScene().getWindow();
+        currentStage.close();
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Game.fxml")));
+        stage.setTitle("Hangman");
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
     @FXML
@@ -62,16 +74,42 @@ public class HangmanController {
 //        stage.setResizable(false);
     }
 
-    protected void showLeaderBoard() {
-
+    @FXML
+    protected void showLeaderBoard() throws IOException {
+        Stage currentStage = (Stage) btnPreviousGames.getScene().getWindow();
+        currentStage.close();
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("leaderBoard.fxml")));
+        stage.setTitle("Hangman - leader Board");
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
-    protected void showGameHistory() {
+    @FXML
+    protected void showPreviousGames() throws IOException {
+        PreviousGamesController.player = player;
 
+        Stage currentStage = (Stage) btnPreviousGames.getScene().getWindow();
+        currentStage.close();
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("previousGames.fxml")));
+        stage.setTitle("Hangman - Previous Games");
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
+    @FXML
+    public void logOut() throws IOException {
+        Stage currentStage = (Stage) btnPreviousGames.getScene().getWindow();
+        currentStage.close();
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("start.fxml")));
+        stage.setTitle("Hangman");
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
+    @FXML
     protected void exit() {
-
+        Stage currentStage = (Stage) btnExit.getScene().getWindow();
+        currentStage.close();
+        System.exit(0);
     }
-
 }

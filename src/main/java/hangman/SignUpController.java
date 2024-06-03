@@ -25,6 +25,7 @@ public class SignUpController {
     private TextField txtUsername;
     @FXML
     private TextField txtName;
+    @FXML
     private Label lblLoginError;
 
     private Parent root;
@@ -46,7 +47,9 @@ public class SignUpController {
     protected void signUp() throws IOException {
         UserInfo userInfo = userService.login(txtUsername.getText());
         if (userInfo.getUsername() == null) {
+            userInfo = new UserInfo(txtName.getText(), txtUsername.getText(), txtPassword.getText());
             userService.createUser(new UserInfo(txtName.getText(), txtUsername.getText(), txtPassword.getText()));
+            HangmanController.player = userInfo;
             lblLoginError.setText("");
             Stage currentStage = (Stage) btnBack.getScene().getWindow();
             currentStage.close();

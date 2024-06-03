@@ -26,9 +26,10 @@
                      </VBox.margin>
                   </AnchorPane>
                   <Button fx:id="btnPlay" mnemonicParsing="false" onAction="#play" styleClass="btn" stylesheets="@styles/mainpage.css" text="Play" />
-                  <Button fx:id="btnPreviousGames" mnemonicParsing="false" styleClass="btn" stylesheets="@styles/mainpage.css" text="Previous Games" />
-                  <Button fx:id="btnLeaderBoard" mnemonicParsing="false" styleClass="btn" stylesheets="@styles/mainpage.css" text="Leader Board" />
-                  <Button fx:id="btnExit" mnemonicParsing="false" styleClass="btn" stylesheets="@styles/mainpage.css" text="Exit" />
+                  <Button fx:id="btnPreviousGames" mnemonicParsing="false" onAction="#showPreviousGames" styleClass="btn" stylesheets="@styles/mainpage.css" text="Previous Games" />
+                  <Button fx:id="btnLeaderBoard" mnemonicParsing="false" onAction="#showLeaderBoard" styleClass="btn" stylesheets="@styles/mainpage.css" text="Leader Board" />
+                  <Button fx:id="btnLogOut" mnemonicParsing="false" onAction="#logOut" styleClass="btn" stylesheets="@styles/mainpage.css" text="Log Out" />
+                  <Button fx:id="btnExit" mnemonicParsing="false" onAction="#exit" styleClass="btn" stylesheets="@styles/mainpage.css" text="Exit" />
                </children>
                <HBox.margin>
                   <Insets bottom="20.0" />

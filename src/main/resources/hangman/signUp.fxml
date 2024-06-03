@@ -60,7 +60,7 @@
                               </TextField>
                            </children>
                         </HBox>
-                        <Label fx:id="lblLoginError" prefHeight="18.0" prefWidth="507.0" textFill="RED">
+                        <Label fx:id="lblLoginError" prefHeight="18.0" prefWidth="507.0" text=" " textFill="RED">
                            <font>
                               <Font size="15.0" />
                            </font>

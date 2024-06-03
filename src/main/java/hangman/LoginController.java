@@ -46,6 +46,7 @@ public class LoginController {
     @FXML
     protected void login() throws IOException {
         UserInfo userInfo = userService.login(txtUsername.getText());
+        HangmanController.player = userInfo;
         if (userInfo.getUsername() != null) {
             if (Objects.equals(userInfo.getPassword(), txtPassword.getText())) {
                 Stage currentStage = (Stage) btnBack.getScene().getWindow();

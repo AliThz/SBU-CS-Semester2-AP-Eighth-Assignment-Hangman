@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class UserService {
     private DatabaseManager databaseManager;
 
-
     public UserService() {
         this.databaseManager = new DatabaseManager();
     }
