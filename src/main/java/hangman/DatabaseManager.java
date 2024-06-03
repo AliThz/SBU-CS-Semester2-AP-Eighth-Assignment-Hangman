@@ -322,7 +322,7 @@ public class DatabaseManager {
             System.out.println("Opened database successfully (selectLeaderboard)");
 
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT \"Username\", SUM((100 * LENGTH(\"Word\")) / \"Time\") as \"Score\", SUM(\"Time\") as \"Play Time\" FROM public.gameinfo Group BY \"Username\";");
+            ResultSet rs = stmt.executeQuery("SELECT \"Username\", SUM((100 * LENGTH(\"Word\")) / \"Time\") as \"Score\", SUM(\"Time\") as \"Play Time\" FROM public.gameinfo GROUP BY \"Username\"  ORDER BY \"Score\" desc;");
             leaderBoards = new ArrayList<>();
             while (rs.next()) {
                 LeaderBoard leaderBoard = new LeaderBoard();

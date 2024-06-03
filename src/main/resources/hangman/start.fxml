@@ -7,25 +7,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" styleClass="background" stylesheets="@styles/loginorsignup.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangman.HangmanController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" style="-fx-alignment: center;" styleClass="background" stylesheets="@styles/loginorsignup.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangman.HangmanController">
    <children>
       <HBox prefHeight="304.0" prefWidth="960.0" spacing="30.0" style="-fx-alignment: center;">
          <children>
-            <AnchorPane prefHeight="293.0" prefWidth="795.0" styleClass="game-title-image" />
-            <AnchorPane prefHeight="293.0" prefWidth="79.0" styleClass="hangman-image">
+            <AnchorPane prefHeight="215.0" prefWidth="920.0" styleClass="game-title-image">
                <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </AnchorPane>
+                  <Insets top="20.0" />
+               </HBox.margin></AnchorPane>
          </children>
          <VBox.margin>
             <Insets />
          </VBox.margin>
-         <padding>
-            <Insets top="60.0" />
-         </padding>
       </HBox>
-      <HBox prefHeight="258.0" prefWidth="960.0" spacing="150.0" style="-fx-alignment: center;">
+      <HBox prefHeight="300.0" prefWidth="960.0" spacing="80.0" style="-fx-alignment: center;">
          <children>
             <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#openLoginPage" style="-fx-background-radius: 20;" text="Login" textFill="#254336">
                <HBox.margin>
@@ -40,7 +35,16 @@
                   <Font name="System Bold" size="35.0" />
                </font>
             </Button>
+            <Button fx:id="btnExit" mnemonicParsing="false" onAction="#exit" style="-fx-background-radius: 20;" text="Exit" textFill="#254336">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Button>
+            <AnchorPane prefHeight="271.0" prefWidth="158.0" styleClass="hangman-image" />
          </children>
       </HBox>
    </children>
+   <padding>
+      <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+   </padding>
 </VBox>
