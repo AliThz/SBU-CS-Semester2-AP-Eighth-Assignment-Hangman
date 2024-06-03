@@ -6,10 +6,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox fx:id="vbxLeaderBoardContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" spacing="10.0" style="-fx-alignment: top-center;" styleClass="background" stylesheets="@styles/table.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangman.LeaderBoardController">
    <children>
-      <Label prefHeight="43.0" prefWidth="336.0" text="Previous Games" textFill="WHITE">
+      <Label prefHeight="43.0" prefWidth="336.0" text="Leader Board" textFill="WHITE">
          <font>
             <Font name="System Bold" size="45.0" />
          </font>
