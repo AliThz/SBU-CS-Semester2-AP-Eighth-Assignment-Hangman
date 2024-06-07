@@ -8,6 +8,12 @@ import java.util.UUID;
 
 public class DatabaseManager {
 
+    //region [ - Fields - ]
+    private final String URL = "jdbc:postgresql://localhost:5432/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman";
+    private final String USERNAME = "postgres";
+    private final String PASSWORD = "musketeers";
+    //endregion
+
     //region [ - UserInfo CRUD - ]
 
     //region [ - insertUserInfo(UserInfo userInfo) - ]
@@ -16,7 +22,7 @@ public class DatabaseManager {
         PreparedStatement stmt;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             c.setAutoCommit(false);
             System.out.println("Opened database successfully (insertUserInfo)");
 
@@ -43,7 +49,7 @@ public class DatabaseManager {
         ArrayList<UserInfo> userInfos = null;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             c.setAutoCommit(false);
             System.out.println("Opened database successfully (selectUserInfos)");
 
@@ -76,7 +82,7 @@ public class DatabaseManager {
         UserInfo userInfo = null;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             c.setAutoCommit(false);
             System.out.println("Opened database successfully (selectUserInfo (" + username + "))");
 
@@ -107,7 +113,7 @@ public class DatabaseManager {
         PreparedStatement stmt;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             c.setAutoCommit(false);
             System.out.println("Opened database successfully (updateUserInfo)");
 
@@ -133,7 +139,7 @@ public class DatabaseManager {
         PreparedStatement stmt;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             c.setAutoCommit(false);
             System.out.println("Opened database successfully (deleteUserInfo)");
 
@@ -161,7 +167,7 @@ public class DatabaseManager {
         PreparedStatement stmt;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             c.setAutoCommit(false);
             System.out.println("Opened database successfully (insertGameInfo)");
 
@@ -191,7 +197,7 @@ public class DatabaseManager {
         ArrayList<GameInfo> gameInfos = null;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             c.setAutoCommit(false);
             System.out.println("Opened database successfully (selectGameInfos)");
 
@@ -228,7 +234,7 @@ public class DatabaseManager {
         GameInfo gameInfo = null;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             c.setAutoCommit(false);
             System.out.println("Opened database successfully (selectGameInfo)");
 
@@ -263,7 +269,7 @@ public class DatabaseManager {
         PreparedStatement stmt;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             c.setAutoCommit(false);
             System.out.println("Opened database successfully (updateGameInfo)");
 
@@ -292,7 +298,7 @@ public class DatabaseManager {
         PreparedStatement stmt;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             c.setAutoCommit(false);
             System.out.println("Opened database successfully (deleteGameInfo)");
 
@@ -317,7 +323,7 @@ public class DatabaseManager {
         ArrayList<LeaderBoard> leaderBoards = null;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:4321/SBU-CS-Semester2-AP-Eighth-Assignment-Hangman", "postgres", "hmhat");
+            c = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             c.setAutoCommit(false);
             System.out.println("Opened database successfully (selectLeaderboard)");
 
