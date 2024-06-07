@@ -1,17 +1,16 @@
 package hangman;
 
+import hangman.Model.DTOs.GameInfo;
+import hangman.Model.DTOs.UserInfo;
+import hangman.Model.Services.GameService;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Background;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Ellipse;
@@ -240,7 +239,7 @@ public class GameController implements Initializable {
     public void backToTheMenu() throws IOException {
         Stage currentStage = (Stage) btnPlay.getScene().getWindow();
         currentStage.close();
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hangman-view.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/hangman-view.fxml")));
         stage.setTitle("Hangman");
         stage.setScene(new Scene(root));
         stage.show();

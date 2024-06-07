@@ -1,4 +1,4 @@
-package hangman;
+package hangman.Model.DTOs;
 
 import java.util.UUID;
 

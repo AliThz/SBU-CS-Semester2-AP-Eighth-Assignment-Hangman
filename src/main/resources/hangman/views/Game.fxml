@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" style="-fx-alignment: center;" styleClass="background" stylesheets="@styles/game.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangman.GameController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" style="-fx-alignment: center;" styleClass="background" stylesheets="@../styles/game.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangman.GameController">
    <children>
       <VBox fx:id="vbxGameBoard" prefHeight="200.0" prefWidth="540.0" style="-fx-alignment: center;">
          <children>

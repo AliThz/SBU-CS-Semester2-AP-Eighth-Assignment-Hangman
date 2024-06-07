@@ -1,5 +1,8 @@
 package hangman;
 
+import hangman.Model.DTOs.GameInfo;
+import hangman.Model.DTOs.UserInfo;
+import hangman.Model.Services.GameService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -7,8 +10,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -18,7 +19,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -86,7 +86,7 @@ public class PreviousGamesController implements Initializable {
     public void back() throws IOException {
         Stage currentStage = (Stage) btnBack.getScene().getWindow();
         currentStage.close();
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hangman-view.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/hangman-view.fxml")));
         stage.setTitle("Hangman");
         stage.setScene(new Scene(root));
         stage.show();

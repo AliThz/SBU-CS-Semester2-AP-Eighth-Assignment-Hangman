@@ -1,5 +1,6 @@
 package hangman;
 
+import hangman.Model.DTOs.UserInfo;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -44,7 +45,7 @@ public class HangmanController {
         GameController.player = player;
         Stage currentStage = (Stage) btnPlay.getScene().getWindow();
         currentStage.close();
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Game.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/Game.fxml")));
         stage.setTitle("Hangman");
         stage.setScene(new Scene(root));
         stage.show();
@@ -54,7 +55,7 @@ public class HangmanController {
     protected void openLoginPage() throws IOException {
         Stage currentStage = (Stage) btnSignUp.getScene().getWindow();
         currentStage.close();
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/login.fxml")));
         stage.setTitle("Hangman - Login");
         stage.setScene(new Scene(root));
         stage.show();
@@ -65,7 +66,7 @@ public class HangmanController {
     protected void openSignUpPage() throws IOException {
         Stage currentStage = (Stage) btnSignUp.getScene().getWindow();
         currentStage.close();
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("signUp.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/signUp.fxml")));
         stage.setTitle("Hangman - Sign Up");
         stage.setScene(new Scene(root));
         stage.show();
@@ -76,7 +77,7 @@ public class HangmanController {
     protected void showLeaderBoard() throws IOException {
         Stage currentStage = (Stage) btnLeaderBoard.getScene().getWindow();
         currentStage.close();
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("leaderBoard.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/leaderBoard.fxml")));
         stage.setTitle("Hangman - leader Board");
         stage.setScene(new Scene(root));
         stage.show();
@@ -85,10 +86,9 @@ public class HangmanController {
     @FXML
     protected void showPreviousGames() throws IOException {
         PreviousGamesController.player = player;
-
         Stage currentStage = (Stage) btnPreviousGames.getScene().getWindow();
         currentStage.close();
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("previousGames.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/previousGames.fxml")));
         stage.setTitle("Hangman - Previous Games");
         stage.setScene(new Scene(root));
         stage.show();
@@ -98,7 +98,7 @@ public class HangmanController {
     public void logOut() throws IOException {
         Stage currentStage = (Stage) btnLogOut.getScene().getWindow();
         currentStage.close();
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("start.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/start.fxml")));
         stage.setTitle("Hangman");
         stage.setScene(new Scene(root));
         stage.show();

@@ -1,9 +1,8 @@
-package hangman;
+package hangman.Model.Services;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.UUID;
@@ -11,6 +10,9 @@ import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import hangman.Model.DTOs.GameInfo;
+import hangman.Model.DTOs.LeaderBoard;
+import hangman.Model.Database.DatabaseManager;
 
 public class GameService {
     private DatabaseManager databaseManager;

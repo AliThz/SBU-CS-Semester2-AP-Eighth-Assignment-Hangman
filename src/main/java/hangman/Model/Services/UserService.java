@@ -1,4 +1,7 @@
-package hangman;
+package hangman.Model.Services;
+
+import hangman.Model.DTOs.UserInfo;
+import hangman.Model.Database.DatabaseManager;
 
 import java.util.ArrayList;
 

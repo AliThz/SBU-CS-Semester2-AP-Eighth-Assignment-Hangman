@@ -1,4 +1,8 @@
-package hangman;
+package hangman.Model.Database;
+
+import hangman.Model.DTOs.GameInfo;
+import hangman.Model.DTOs.LeaderBoard;
+import hangman.Model.DTOs.UserInfo;
 
 import java.sql.*;
 import java.util.ArrayList;

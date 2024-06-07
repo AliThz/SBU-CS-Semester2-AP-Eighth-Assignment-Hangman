@@ -1,6 +1,8 @@
 package hangman;
 
-import javafx.beans.property.SimpleIntegerProperty;
+import hangman.Model.DTOs.GameInfo;
+import hangman.Model.DTOs.LeaderBoard;
+import hangman.Model.Services.GameService;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,7 +38,7 @@ public class LeaderBoardController implements Initializable {
     public void back() throws IOException {
         Stage currentStage = (Stage) btnBack.getScene().getWindow();
         currentStage.close();
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hangman-view.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/hangman-view.fxml")));
         stage.setTitle("Hangman");
         stage.setScene(new Scene(root));
         stage.show();

@@ -1,5 +1,7 @@
 package hangman;
 
+import hangman.Model.DTOs.UserInfo;
+import hangman.Model.Services.UserService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -39,7 +41,7 @@ public class SignUpController implements Initializable {
     protected void openStartPage() throws IOException {
         Stage currentStage = (Stage) btnBack.getScene().getWindow();
         currentStage.close();
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("start.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/start.fxml")));
         stage.setTitle("Hangman");
         stage.setScene(new Scene(root));
         stage.show();
@@ -56,7 +58,7 @@ public class SignUpController implements Initializable {
             lblLoginError.setText("");
             Stage currentStage = (Stage) btnBack.getScene().getWindow();
             currentStage.close();
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hangman-view.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/hangman-view.fxml")));
             stage.setTitle("Hangman");
             stage.setScene(new Scene(root));
             stage.show();

@@ -1,4 +1,4 @@
-package hangman;
+package hangman.Model.DTOs;
 
 public class LeaderBoard {
     private String username;
