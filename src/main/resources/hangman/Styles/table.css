@@ -1,0 +1,21 @@
+.background {
+    -fx-background-color: #254336;
+}
+
+.game-information-container {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-alignment: center;
+}
+
+.game-information {
+    -fx-text-fill: #254336;
+    -fx-font-size: 1.5em;
+    -fx-font-family: "a Papa";
+}
+
+.table-view {
+    -fx-padding: 5;
+    -fx-background-radius: 10;
+}

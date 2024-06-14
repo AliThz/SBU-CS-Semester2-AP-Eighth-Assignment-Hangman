@@ -1,0 +1,34 @@
+.menu {
+    -fx-alignment: center;
+}
+
+.btn {
+    -fx-background-color: #B7B597;
+    -fx-text-fill:  #254336;
+    -fx-padding: 10px;
+    -fx-font-size: 2em;
+    -fx-pref-width: 200px;
+}
+
+.hangman-image {
+    -fx-background-image: url("../pictures/hangman-2.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+}
+
+.alphabet-image{
+    -fx-background-image: url("../pictures/alphabets-1.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+}
+
+.background{
+    -fx-background-color :  #254336;
+    -fx-alignment: center;
+}
+
+.game-title-image {
+    -fx-background-image: url("../pictures/hangman-3.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+}
